@@ -1,0 +1,144 @@
+version: "3.9"
+
+services:
+  space1:
+    build: .
+    container_name: space1
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.11
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  space2:
+    build: .
+    container_name: space2
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.12
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  air1:
+    build: .
+    container_name: air1
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.21
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  air2:
+    build: .
+    container_name: air2
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.22
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  air3:
+    build: .
+    container_name: air3
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.23
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground1:
+    build: .
+    container_name: ground1
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.31
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground2:
+    build: .
+    container_name: ground2
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.32
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground3:
+    build: .
+    container_name: ground3
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.33
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground4:
+    build: .
+    container_name: ground4
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.34
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground5:
+    build: .
+    container_name: ground5
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.35
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground6:
+    build: .
+    container_name: ground6
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.36
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  ground7:
+    build: .
+    container_name: ground7
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.37
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  sea1:
+    build: .
+    container_name: sea1
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.41
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  sea2:
+    build: .
+    container_name: sea2
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.42
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  sea3:
+    build: .
+    container_name: sea3
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.43
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+networks:
+  topo_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.100.0/24

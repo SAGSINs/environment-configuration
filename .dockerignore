@@ -1,0 +1,7 @@
+README.md
+.github/
+.git/
+*.md
+!Dockerfile
+!topology.docker-compose.yml
+!custom_hosts

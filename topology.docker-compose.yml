@@ -1,140 +1,215 @@
 version: "3.9"
 
 services:
-  space1:
-    build: .
-    container_name: space1
+  satellite_tokyo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: satellite_tokyo
     networks:
       topo_net:
         ipv4_address: 192.168.100.11
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  space2:
-    build: .
-    container_name: space2
+  satellite_newyork:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: satellite_newyork
     networks:
       topo_net:
         ipv4_address: 192.168.100.12
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  air1:
-    build: .
-    container_name: air1
+  drone_beijing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: drone_beijing
     networks:
       topo_net:
         ipv4_address: 192.168.100.21
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  air2:
-    build: .
-    container_name: air2
+  drone_mumbai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: drone_mumbai
     networks:
       topo_net:
         ipv4_address: 192.168.100.22
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  air3:
-    build: .
-    container_name: air3
+  drone_london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: drone_london
     networks:
       topo_net:
         ipv4_address: 192.168.100.23
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground1:
-    build: .
-    container_name: ground1
+  ground_station_hanoi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ground_station_hanoi
     networks:
       topo_net:
         ipv4_address: 192.168.100.31
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground2:
-    build: .
-    container_name: ground2
+  ground_station_paris:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ground_station_paris
     networks:
       topo_net:
         ipv4_address: 192.168.100.32
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground3:
-    build: .
-    container_name: ground3
+  ground_station_moscow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ground_station_moscow
     networks:
       topo_net:
         ipv4_address: 192.168.100.33
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground4:
-    build: .
-    container_name: ground4
+  mobile_device_tokyo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: mobile_device_tokyo
     networks:
       topo_net:
         ipv4_address: 192.168.100.34
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground5:
-    build: .
-    container_name: ground5
+  mobile_device_london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: mobile_device_london
     networks:
       topo_net:
         ipv4_address: 192.168.100.35
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground6:
-    build: .
-    container_name: ground6
+  mobile_device_newyork:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: mobile_device_newyork
     networks:
       topo_net:
         ipv4_address: 192.168.100.36
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  ground7:
-    build: .
-    container_name: ground7
+  mobile_device_singapore:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: mobile_device_singapore
     networks:
       topo_net:
         ipv4_address: 192.168.100.37
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  sea1:
-    build: .
-    container_name: sea1
+  ship_singapore:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ship_singapore
     networks:
       topo_net:
         ipv4_address: 192.168.100.41
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  sea2:
-    build: .
-    container_name: sea2
+  ship_tokyo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ship_tokyo
     networks:
       topo_net:
         ipv4_address: 192.168.100.42
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
-  sea3:
-    build: .
-    container_name: sea3
+  ship_london:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: ship_london
     networks:
       topo_net:
         ipv4_address: 192.168.100.43
     volumes:
       - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
 
 networks:
   topo_net:

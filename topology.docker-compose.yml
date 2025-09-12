@@ -1,12 +1,45 @@
 version: "3.9"
 
 services:
+  # Backend Service
+  sagsin-backend:
+    image: baocules/sagsin-be
+    container_name: sagsin-be
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.10
+    ports:
+      - "3000:3000"
+      - "50051:50051"
+    environment:
+      - NODE_ENV=production
+      - APP_PORT=3000
+      - GRPC_URL=0.0.0.0:50051
+      - DATABASE_URL=mongodb://mongodb:27017/sagsin-db
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+    volumes:
+      - ./custom_hosts:/etc/hosts
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.2
+    environment:
+      - MONGO_INITDB_DATABASE=sagsin-db
+    volumes:
+      - mongodb_data:/data/db
+      - ./custom_hosts:/etc/hosts
+    restart: unless-stopped
+
   satellite_tokyo:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: satellite_tokyo
     networks:
       topo_net:
@@ -16,11 +49,7 @@ services:
     restart: unless-stopped
 
   satellite_newyork:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: satellite_newyork
     networks:
       topo_net:
@@ -30,11 +59,7 @@ services:
     restart: unless-stopped
 
   drone_beijing:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: drone_beijing
     networks:
       topo_net:
@@ -44,11 +69,7 @@ services:
     restart: unless-stopped
 
   drone_mumbai:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: drone_mumbai
     networks:
       topo_net:
@@ -58,11 +79,7 @@ services:
     restart: unless-stopped
 
   drone_london:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: drone_london
     networks:
       topo_net:
@@ -72,11 +89,7 @@ services:
     restart: unless-stopped
 
   ground_station_hanoi:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ground_station_hanoi
     networks:
       topo_net:
@@ -86,11 +99,7 @@ services:
     restart: unless-stopped
 
   ground_station_paris:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ground_station_paris
     networks:
       topo_net:
@@ -100,11 +109,7 @@ services:
     restart: unless-stopped
 
   ground_station_moscow:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ground_station_moscow
     networks:
       topo_net:
@@ -114,11 +119,7 @@ services:
     restart: unless-stopped
 
   mobile_device_tokyo:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: mobile_device_tokyo
     networks:
       topo_net:
@@ -128,11 +129,7 @@ services:
     restart: unless-stopped
 
   mobile_device_london:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: mobile_device_london
     networks:
       topo_net:
@@ -142,11 +139,7 @@ services:
     restart: unless-stopped
 
   mobile_device_newyork:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: mobile_device_newyork
     networks:
       topo_net:
@@ -156,11 +149,7 @@ services:
     restart: unless-stopped
 
   mobile_device_singapore:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: mobile_device_singapore
     networks:
       topo_net:
@@ -170,11 +159,7 @@ services:
     restart: unless-stopped
 
   ship_singapore:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ship_singapore
     networks:
       topo_net:
@@ -184,11 +169,7 @@ services:
     restart: unless-stopped
 
   ship_tokyo:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ship_tokyo
     networks:
       topo_net:
@@ -198,11 +179,7 @@ services:
     restart: unless-stopped
 
   ship_london:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BUILDKIT_INLINE_CACHE: 1
+    image: baocules/sagsin-agent
     container_name: ship_london
     networks:
       topo_net:
@@ -217,3 +194,6 @@ networks:
       driver: default
       config:
         - subnet: 192.168.100.0/24
+
+volumes:
+  mongodb_data:

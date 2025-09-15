@@ -41,6 +41,9 @@ services:
   satellite_tokyo:
     image: baocules/sagsin-agent
     container_name: satellite_tokyo
+    environment:
+      - HOST_NAME=satiellite_tokyo
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.11
@@ -51,6 +54,9 @@ services:
   satellite_newyork:
     image: baocules/sagsin-agent
     container_name: satellite_newyork
+    environment:
+      - HOST_NAME=satellite_newyork
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.12
@@ -61,6 +67,9 @@ services:
   drone_beijing:
     image: baocules/sagsin-agent
     container_name: drone_beijing
+    environment:
+      - HOST_NAME=drone_beijing
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.21
@@ -71,6 +80,9 @@ services:
   drone_mumbai:
     image: baocules/sagsin-agent
     container_name: drone_mumbai
+    environment:
+      - HOST_NAME=drone_mumbai
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.22
@@ -81,6 +93,9 @@ services:
   drone_london:
     image: baocules/sagsin-agent
     container_name: drone_london
+    environment:
+      - HOST_NAME=drone_london
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.23
@@ -91,6 +106,9 @@ services:
   ground_station_hanoi:
     image: baocules/sagsin-agent
     container_name: ground_station_hanoi
+    environment:
+      - HOST_NAME=ground_station_hanoi
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.31
@@ -101,6 +119,9 @@ services:
   ground_station_paris:
     image: baocules/sagsin-agent
     container_name: ground_station_paris
+    environment:
+      - HOST_NAME=ground_station_paris
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.32
@@ -110,7 +131,10 @@ services:
 
   ground_station_moscow:
     image: baocules/sagsin-agent
-    container_name: ground_station_moscow
+    container_name: ground_station_moscow 
+    environment:
+      - HOST_NAME=ground_station_moscow
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.33
@@ -121,6 +145,9 @@ services:
   mobile_device_tokyo:
     image: baocules/sagsin-agent
     container_name: mobile_device_tokyo
+    environment:
+      - HOST_NAME=mobile_device_tokyo
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.34
@@ -131,6 +158,9 @@ services:
   mobile_device_london:
     image: baocules/sagsin-agent
     container_name: mobile_device_london
+    environment:
+      - HOST_NAME=mobile_device_london
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.35
@@ -141,6 +171,9 @@ services:
   mobile_device_newyork:
     image: baocules/sagsin-agent
     container_name: mobile_device_newyork
+    environment:
+      - HOST_NAME=mobile_device_newyork
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.36
@@ -151,6 +184,9 @@ services:
   mobile_device_singapore:
     image: baocules/sagsin-agent
     container_name: mobile_device_singapore
+    environment:
+      - HOST_NAME=mobile_device_singapore
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.37
@@ -161,6 +197,9 @@ services:
   ship_singapore:
     image: baocules/sagsin-agent
     container_name: ship_singapore
+    environment:
+      - HOST_NAME=ship_singapore
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.41
@@ -171,6 +210,9 @@ services:
   ship_tokyo:
     image: baocules/sagsin-agent
     container_name: ship_tokyo
+    environment:
+      - HOST_NAME=ship_tokyo
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.42
@@ -181,6 +223,9 @@ services:
   ship_london:
     image: baocules/sagsin-agent
     container_name: ship_london
+    environment:
+      - HOST_NAME=ship_london
+      - GRPC_TARGET=192.168.100.10:50051
     networks:
       topo_net:
         ipv4_address: 192.168.100.43

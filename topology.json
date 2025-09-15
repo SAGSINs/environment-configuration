@@ -1,0 +1,150 @@
+{
+  "nodes": [
+    {
+      "id": "satellite_tokyo",
+      "type": "space"
+    },
+    {
+      "id": "satellite_newyork",
+      "type": "space"
+    },
+    {
+      "id": "drone_beijing",
+      "type": "air"
+    },
+    {
+      "id": "drone_mumbai",
+      "type": "air"
+    },
+    {
+      "id": "drone_london",
+      "type": "air"
+    },
+    {
+      "id": "ground_station_hanoi",
+      "type": "ground"
+    },
+    {
+      "id": "ground_station_paris",
+      "type": "ground"
+    },
+    {
+      "id": "ground_station_moscow",
+      "type": "ground"
+    },
+    {
+      "id": "mobile_device_tokyo",
+      "type": "mobile"
+    },
+    {
+      "id": "mobile_device_london",
+      "type": "mobile"
+    },
+    {
+      "id": "mobile_device_newyork",
+      "type": "mobile"
+    },
+    {
+      "id": "mobile_device_singapore",
+      "type": "mobile"
+    },
+    {
+      "id": "ship_singapore",
+      "type": "sea"
+    },
+    {
+      "id": "ship_tokyo",
+      "type": "sea"
+    },
+    {
+      "id": "ship_london",
+      "type": "sea"
+    }
+  ],
+  "links": [
+    {
+      "source": "satellite_tokyo",
+      "target": "satellite_newyork"
+    },
+    {
+      "source": "satellite_newyork",
+      "target": "drone_beijing"
+    },
+    {
+      "source": "drone_beijing",
+      "target": "drone_mumbai"
+    },
+    {
+      "source": "drone_mumbai",
+      "target": "drone_london"
+    },
+    {
+      "source": "drone_london",
+      "target": "ground_station_hanoi"
+    },
+    {
+      "source": "ground_station_hanoi",
+      "target": "ground_station_paris"
+    },
+    {
+      "source": "ground_station_paris",
+      "target": "ground_station_moscow"
+    },
+    {
+      "source": "ground_station_moscow",
+      "target": "mobile_device_tokyo"
+    },
+    {
+      "source": "mobile_device_tokyo",
+      "target": "mobile_device_london"
+    },
+    {
+      "source": "mobile_device_london",
+      "target": "mobile_device_newyork"
+    },
+    {
+      "source": "mobile_device_newyork",
+      "target": "mobile_device_singapore"
+    },
+    {
+      "source": "mobile_device_singapore",
+      "target": "ship_singapore"
+    },
+    {
+      "source": "ship_singapore",
+      "target": "ship_tokyo"
+    },
+    {
+      "source": "ship_tokyo",
+      "target": "ship_london"
+    },
+    {
+      "source": "satellite_tokyo",
+      "target": "ground_station_moscow"
+    },
+    {
+      "source": "ship_london",
+      "target": "satellite_tokyo"
+    },
+    {
+      "source": "mobile_device_london",
+      "target": "ship_singapore"
+    },
+    {
+      "source": "drone_beijing",
+      "target": "ground_station_paris"
+    },
+    {
+      "source": "ship_tokyo",
+      "target": "mobile_device_london"
+    },
+    {
+      "source": "satellite_newyork",
+      "target": "mobile_device_singapore"
+    },
+    {
+      "source": "ship_tokyo",
+      "target": "drone_beijing"
+    }
+  ]
+}

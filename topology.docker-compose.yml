@@ -34,10 +34,6 @@ services:
         ipv4_address: 192.168.100.2
     environment:
       - MONGO_INITDB_DATABASE=sagsin-db
-    volumes:
-      - mongodb_data:/data/db
-      - ./custom_hosts:/etc/hosts
-      - ./topology.json:/topology/topology.json:ro
     restart: unless-stopped
 
   satellite_tokyo:
@@ -241,6 +237,3 @@ networks:
       driver: default
       config:
         - subnet: 192.168.100.0/24
-
-volumes:
-  mongodb_data:

@@ -29,6 +29,10 @@ services:
     networks:
       topo_net:
         ipv4_address: 192.168.100.3
+    environment:
+      - BACKEND_SOCKET_URL=http://sagsin-be:3000
+    depends_on:
+      - sagsin-backend
 
   # MongoDB Database
   mongodb:

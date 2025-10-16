@@ -51,6 +51,8 @@ services:
     container_name: satellite_tokyo
     environment:
       - HOST_NAME=satellite_tokyo
+      - LAT=35.6895
+      - LNG=139.6917
     networks:
       topo_net:
         ipv4_address: 192.168.100.11
@@ -63,6 +65,8 @@ services:
     container_name: satellite_newyork
     environment:
       - HOST_NAME=satellite_newyork
+      - LAT=40.7128  
+      - LNG=-74.0060
     networks:
       topo_net:
         ipv4_address: 192.168.100.12
@@ -75,6 +79,8 @@ services:
     container_name: drone_beijing
     environment:
       - HOST_NAME=drone_beijing
+      - LAT=39.9042
+      - LNG=116.4074
     networks:
       topo_net:
         ipv4_address: 192.168.100.21
@@ -87,6 +93,8 @@ services:
     container_name: drone_mumbai
     environment:
       - HOST_NAME=drone_mumbai
+      - LAT=19.0760
+      - LNG=72.8777
     networks:
       topo_net:
         ipv4_address: 192.168.100.22
@@ -99,6 +107,8 @@ services:
     container_name: drone_london
     environment:
       - HOST_NAME=drone_london
+      - LAT=51.5074
+      - LNG=-0.1278
     networks:
       topo_net:
         ipv4_address: 192.168.100.23
@@ -111,6 +121,8 @@ services:
     container_name: ground_station_hanoi
     environment:
       - HOST_NAME=ground_station_hanoi
+      - LAT=21.0285
+      - LNG=105.8542
     networks:
       topo_net:
         ipv4_address: 192.168.100.31
@@ -123,6 +135,8 @@ services:
     container_name: ground_station_paris
     environment:
       - HOST_NAME=ground_station_paris
+      - LAT=48.8566
+      - LNG=2.3522
     networks:
       topo_net:
         ipv4_address: 192.168.100.32
@@ -135,6 +149,8 @@ services:
     container_name: ground_station_moscow 
     environment:
       - HOST_NAME=ground_station_moscow
+      - LAT=55.7558
+      - LNG=37.6173
     networks:
       topo_net:
         ipv4_address: 192.168.100.33
@@ -147,6 +163,8 @@ services:
     container_name: mobile_device_tokyo
     environment:
       - HOST_NAME=mobile_device_tokyo
+      - LAT=35.6764
+      - LNG=139.6500
     networks:
       topo_net:
         ipv4_address: 192.168.100.34
@@ -159,6 +177,8 @@ services:
     container_name: mobile_device_london
     environment:
       - HOST_NAME=mobile_device_london
+      - LAT=51.509
+      - LNG=-0.118
     networks:
       topo_net:
         ipv4_address: 192.168.100.35
@@ -171,6 +191,8 @@ services:
     container_name: mobile_device_newyork
     environment:
       - HOST_NAME=mobile_device_newyork
+      - LAT=40.7128
+      - LNG=-74.0060
     networks:
       topo_net:
         ipv4_address: 192.168.100.36
@@ -183,6 +205,8 @@ services:
     container_name: mobile_device_singapore
     environment:
       - HOST_NAME=mobile_device_singapore
+      - LAT=1.3521
+      - LNG=103.8198
     networks:
       topo_net:
         ipv4_address: 192.168.100.37
@@ -195,6 +219,8 @@ services:
     container_name: ship_singapore
     environment:
       - HOST_NAME=ship_singapore
+      - LAT=1.5321
+      - LNG=104.2
     networks:
       topo_net:
         ipv4_address: 192.168.100.41
@@ -207,6 +233,8 @@ services:
     container_name: ship_tokyo
     environment:
       - HOST_NAME=ship_tokyo
+      - LAT=35.0
+      - LNG=141.0
     networks:
       topo_net:
         ipv4_address: 192.168.100.42
@@ -219,6 +247,8 @@ services:
     container_name: ship_london
     environment:
       - HOST_NAME=ship_london
+      - LAT=51.0
+      - LNG=1.5
     networks:
       topo_net:
         ipv4_address: 192.168.100.43

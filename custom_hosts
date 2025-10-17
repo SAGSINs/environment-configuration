@@ -1,5 +1,5 @@
-192.168.100.11 satellite_tokyo
-192.168.100.12 satellite_newyork
+192.168.100.11 satellite_nairobi
+192.168.100.12 satellite_sao_paulo
 192.168.100.21 drone_beijing
 192.168.100.22 drone_mumbai
 192.168.100.23 drone_london
@@ -7,7 +7,7 @@
 192.168.100.32 ground_station_paris
 192.168.100.33 ground_station_moscow
 192.168.100.34 mobile_device_tokyo
-192.168.100.35 mobile_device_london
+192.168.100.35 mobile_device_riyadh
 192.168.100.36 mobile_device_newyork
 192.168.100.37 mobile_device_singapore
 192.168.100.41 ship_singapore

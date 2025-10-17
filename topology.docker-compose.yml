@@ -46,13 +46,13 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=sagsin-db
 
-  satellite_tokyo:
+  satellite_nairobi:
     image: baocules/sagsin-agent
-    container_name: satellite_tokyo
+    container_name: satellite_nairobi
     environment:
-      - HOST_NAME=satellite_tokyo
-      - LAT=35.6895
-      - LNG=139.6917
+      - HOST_NAME=satellite_nairobi
+      - LAT=-1.2921
+      - LNG=36.8219
     networks:
       topo_net:
         ipv4_address: 192.168.100.11
@@ -60,13 +60,13 @@ services:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
 
-  satellite_newyork:
+  satellite_sao_paulo:
     image: baocules/sagsin-agent
-    container_name: satellite_newyork
+    container_name: satellite_sao_paulo
     environment:
-      - HOST_NAME=satellite_newyork
-      - LAT=40.7128  
-      - LNG=-74.0060
+      - HOST_NAME=satellite_sao_paulo
+      - LAT=-23.5505
+      - LNG=-46.6333
     networks:
       topo_net:
         ipv4_address: 192.168.100.12
@@ -172,13 +172,13 @@ services:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
 
-  mobile_device_london:
+  mobile_device_riyadh:
     image: baocules/sagsin-agent
-    container_name: mobile_device_london
+    container_name: mobile_device_riyadh
     environment:
-      - HOST_NAME=mobile_device_london
-      - LAT=51.509
-      - LNG=-0.118
+      - HOST_NAME=mobile_device_riyadh
+      - LAT=24.7136
+      - LNG=46.6753
     networks:
       topo_net:
         ipv4_address: 192.168.100.35

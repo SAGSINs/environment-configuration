@@ -53,10 +53,10 @@ def guess_type(name):
 
 if __name__ == "__main__":
     hostnames = [
-        "satellite_tokyo", "satellite_newyork",
+        "satellite_nairobi", "satellite_sao_paulo",
         "drone_beijing", "drone_mumbai", "drone_london",
         "ground_station_hanoi", "ground_station_paris", "ground_station_moscow",
-        "mobile_device_tokyo", "mobile_device_london", "mobile_device_newyork", "mobile_device_singapore",
+        "mobile_device_tokyo", "mobile_device_riyadh", "mobile_device_newyork", "mobile_device_singapore",
         "ship_singapore", "ship_tokyo", "ship_london"
     ]
 

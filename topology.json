@@ -1,11 +1,11 @@
 {
   "nodes": [
     {
-      "id": "satellite_tokyo",
+      "id": "satellite_nairobi",
       "type": "space"
     },
     {
-      "id": "satellite_newyork",
+      "id": "satellite_sao_paulo",
       "type": "space"
     },
     {
@@ -37,7 +37,7 @@
       "type": "mobile"
     },
     {
-      "id": "mobile_device_london",
+      "id": "mobile_device_riyadh",
       "type": "mobile"
     },
     {
@@ -63,11 +63,11 @@
   ],
   "links": [
     {
-      "source": "satellite_tokyo",
-      "target": "satellite_newyork"
+      "source": "satellite_nairobi",
+      "target": "satellite_sao_paulo"
     },
     {
-      "source": "satellite_newyork",
+      "source": "satellite_sao_paulo",
       "target": "drone_beijing"
     },
     {
@@ -96,10 +96,10 @@
     },
     {
       "source": "mobile_device_tokyo",
-      "target": "mobile_device_london"
+      "target": "mobile_device_riyadh"
     },
     {
-      "source": "mobile_device_london",
+      "source": "mobile_device_riyadh",
       "target": "mobile_device_newyork"
     },
     {
@@ -119,32 +119,32 @@
       "target": "ship_london"
     },
     {
-      "source": "satellite_tokyo",
-      "target": "ground_station_moscow"
+      "source": "satellite_nairobi",
+      "target": "drone_london"
     },
     {
       "source": "ship_london",
-      "target": "satellite_tokyo"
+      "target": "ground_station_moscow"
     },
     {
-      "source": "mobile_device_london",
-      "target": "ship_singapore"
-    },
-    {
-      "source": "drone_beijing",
+      "source": "ship_singapore",
       "target": "ground_station_paris"
     },
     {
-      "source": "ship_tokyo",
-      "target": "mobile_device_london"
+      "source": "satellite_nairobi",
+      "target": "drone_mumbai"
     },
     {
-      "source": "satellite_newyork",
-      "target": "mobile_device_singapore"
+      "source": "mobile_device_singapore",
+      "target": "satellite_nairobi"
     },
     {
-      "source": "ship_tokyo",
-      "target": "drone_beijing"
+      "source": "ship_singapore",
+      "target": "drone_london"
+    },
+    {
+      "source": "ship_singapore",
+      "target": "satellite_sao_paulo"
     }
   ]
 }

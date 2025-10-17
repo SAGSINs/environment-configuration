@@ -19,6 +19,12 @@ services:
       - HEURISTIC_URL=192.168.100.3:50052
     depends_on:
       - mongodb
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
@@ -32,7 +38,8 @@ services:
     environment:
       - BACKEND_SOCKET_URL=http://sagsin-be:3000
     depends_on:
-      - sagsin-backend
+      sagsin-backend:
+        condition: service_healthy
 
   # MongoDB Database
   mongodb:
@@ -59,6 +66,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   satellite_sao_paulo:
     image: baocules/sagsin-agent
@@ -73,6 +83,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   drone_beijing:
     image: baocules/sagsin-agent
@@ -87,6 +100,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   drone_mumbai:
     image: baocules/sagsin-agent
@@ -101,6 +117,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   drone_london:
     image: baocules/sagsin-agent
@@ -115,6 +134,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ground_station_hanoi:
     image: baocules/sagsin-agent
@@ -129,6 +151,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ground_station_paris:
     image: baocules/sagsin-agent
@@ -143,6 +168,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ground_station_moscow:
     image: baocules/sagsin-agent
@@ -157,6 +185,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   mobile_device_tokyo:
     image: baocules/sagsin-agent
@@ -171,6 +202,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   mobile_device_riyadh:
     image: baocules/sagsin-agent
@@ -185,6 +219,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   mobile_device_newyork:
     image: baocules/sagsin-agent
@@ -199,6 +236,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   mobile_device_singapore:
     image: baocules/sagsin-agent
@@ -213,6 +253,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ship_singapore:
     image: baocules/sagsin-agent
@@ -227,6 +270,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ship_tokyo:
     image: baocules/sagsin-agent
@@ -241,6 +287,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
   ship_london:
     image: baocules/sagsin-agent
@@ -255,6 +304,9 @@ services:
     volumes:
       - ./custom_hosts:/etc/hosts
       - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
 
 networks:
   topo_net:

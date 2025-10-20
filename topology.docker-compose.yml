@@ -11,10 +11,12 @@ services:
     ports:
       - "3000:3000"
       - "50051:50051"
+      - "50053:50053"
     environment:
       - NODE_ENV=production
       - APP_PORT=3000
       - GRPC_URL=0.0.0.0:50051
+      - TIMELINE_GRPC_PORT=0.0.0.0:50053
       - DATABASE_URL=mongodb://mongodb:27017/sagsin-db
       - HEURISTIC_URL=192.168.100.3:50052
     depends_on:

@@ -1,6 +1,11 @@
 version: "3.9"
 
 services:
+  sagsin-fe:
+    image: baocules/sagsin-fe
+    container_name: sagsin-fe
+    ports:
+      - "5173:80"
   # Backend Service
   sagsin-backend:
     image: baocules/sagsin-be

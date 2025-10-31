@@ -2,63 +2,108 @@
   "nodes": [
     {
       "id": "satellite_nairobi",
-      "type": "space"
+      "type": "space",
+      "lat": -1.2921,
+      "lng": 36.8219,
+      "weather": "clear"
     },
     {
       "id": "satellite_sao_paulo",
-      "type": "space"
+      "type": "space",
+      "lat": -23.5505,
+      "lng": -46.6333,
+      "weather": "rainy"
     },
     {
       "id": "drone_beijing",
-      "type": "air"
+      "type": "air",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "weather": "cloudy"
     },
     {
       "id": "drone_mumbai",
-      "type": "air"
+      "type": "air",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "weather": "rainy"
     },
     {
       "id": "drone_london",
-      "type": "air"
+      "type": "air",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "weather": "rainy"
     },
     {
       "id": "ground_station_hanoi",
-      "type": "ground"
+      "type": "ground",
+      "lat": 21.0285,
+      "lng": 105.8542,
+      "weather": "cloudy"
     },
     {
       "id": "ground_station_paris",
-      "type": "ground"
+      "type": "ground",
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "weather": "cloudy"
     },
     {
       "id": "ground_station_moscow",
-      "type": "ground"
+      "type": "ground",
+      "lat": 55.7558,
+      "lng": 37.6173,
+      "weather": "cloudy"
     },
     {
       "id": "mobile_device_tokyo",
-      "type": "mobile"
+      "type": "mobile",
+      "lat": 35.6764,
+      "lng": 139.65,
+      "weather": "clear"
     },
     {
       "id": "mobile_device_riyadh",
-      "type": "mobile"
+      "type": "mobile",
+      "lat": 24.7136,
+      "lng": 46.6753,
+      "weather": "clear"
     },
     {
       "id": "mobile_device_newyork",
-      "type": "mobile"
+      "type": "mobile",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "weather": "cloudy"
     },
     {
       "id": "mobile_device_singapore",
-      "type": "mobile"
+      "type": "mobile",
+      "lat": 1.3521,
+      "lng": 103.8198,
+      "weather": "rainy"
     },
     {
       "id": "ship_singapore",
-      "type": "sea"
+      "type": "sea",
+      "lat": 1.5321,
+      "lng": 104.2,
+      "weather": "stormy"
     },
     {
       "id": "ship_tokyo",
-      "type": "sea"
+      "type": "sea",
+      "lat": 35.0,
+      "lng": 141.0,
+      "weather": "rainy"
     },
     {
       "id": "ship_london",
-      "type": "sea"
+      "type": "sea",
+      "lat": 51.0,
+      "lng": 1.5,
+      "weather": "stormy"
     }
   ],
   "links": [
@@ -120,31 +165,31 @@
     },
     {
       "source": "satellite_nairobi",
-      "target": "drone_london"
+      "target": "ship_singapore"
     },
     {
       "source": "ship_london",
-      "target": "ground_station_moscow"
+      "target": "mobile_device_newyork"
     },
     {
-      "source": "ship_singapore",
-      "target": "ground_station_paris"
+      "source": "drone_london",
+      "target": "mobile_device_tokyo"
     },
     {
       "source": "satellite_nairobi",
-      "target": "drone_mumbai"
-    },
-    {
-      "source": "mobile_device_singapore",
-      "target": "satellite_nairobi"
+      "target": "mobile_device_newyork"
     },
     {
       "source": "ship_singapore",
-      "target": "drone_london"
+      "target": "ground_station_hanoi"
     },
     {
       "source": "ship_singapore",
       "target": "satellite_sao_paulo"
+    },
+    {
+      "source": "ship_tokyo",
+      "target": "drone_beijing"
     }
   ]
 }

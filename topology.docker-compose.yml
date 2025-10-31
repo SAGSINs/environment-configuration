@@ -67,6 +67,7 @@ services:
       - HOST_NAME=satellite_nairobi
       - LAT=-1.2921
       - LNG=36.8219
+      - WEATHER=clear
     networks:
       topo_net:
         ipv4_address: 192.168.100.11
@@ -84,6 +85,7 @@ services:
       - HOST_NAME=satellite_sao_paulo
       - LAT=-23.5505
       - LNG=-46.6333
+      - WEATHER=rainy
     networks:
       topo_net:
         ipv4_address: 192.168.100.12
@@ -101,6 +103,7 @@ services:
       - HOST_NAME=drone_beijing
       - LAT=39.9042
       - LNG=116.4074
+      - WEATHER=cloudy
     networks:
       topo_net:
         ipv4_address: 192.168.100.21
@@ -118,6 +121,7 @@ services:
       - HOST_NAME=drone_mumbai
       - LAT=19.0760
       - LNG=72.8777
+      - WEATHER=rainy
     networks:
       topo_net:
         ipv4_address: 192.168.100.22
@@ -135,6 +139,7 @@ services:
       - HOST_NAME=drone_london
       - LAT=51.5074
       - LNG=-0.1278
+      - WEATHER=rainy
     networks:
       topo_net:
         ipv4_address: 192.168.100.23
@@ -152,6 +157,7 @@ services:
       - HOST_NAME=ground_station_hanoi
       - LAT=21.0285
       - LNG=105.8542
+      - WEATHER=cloudy
     networks:
       topo_net:
         ipv4_address: 192.168.100.31
@@ -169,6 +175,7 @@ services:
       - HOST_NAME=ground_station_paris
       - LAT=48.8566
       - LNG=2.3522
+      - WEATHER=cloudy
     networks:
       topo_net:
         ipv4_address: 192.168.100.32
@@ -186,6 +193,7 @@ services:
       - HOST_NAME=ground_station_moscow
       - LAT=55.7558
       - LNG=37.6173
+      - WEATHER=cloudy
     networks:
       topo_net:
         ipv4_address: 192.168.100.33
@@ -203,6 +211,7 @@ services:
       - HOST_NAME=mobile_device_tokyo
       - LAT=35.6764
       - LNG=139.6500
+      - WEATHER=clear
     networks:
       topo_net:
         ipv4_address: 192.168.100.34
@@ -220,6 +229,7 @@ services:
       - HOST_NAME=mobile_device_riyadh
       - LAT=24.7136
       - LNG=46.6753
+      - WEATHER=clear
     networks:
       topo_net:
         ipv4_address: 192.168.100.35
@@ -237,6 +247,7 @@ services:
       - HOST_NAME=mobile_device_newyork
       - LAT=40.7128
       - LNG=-74.0060
+      - WEATHER=cloudy
     networks:
       topo_net:
         ipv4_address: 192.168.100.36
@@ -254,6 +265,7 @@ services:
       - HOST_NAME=mobile_device_singapore
       - LAT=1.3521
       - LNG=103.8198
+      - WEATHER=rainy
     networks:
       topo_net:
         ipv4_address: 192.168.100.37
@@ -271,6 +283,7 @@ services:
       - HOST_NAME=ship_singapore
       - LAT=1.5321
       - LNG=104.2
+      - WEATHER=stormy
     networks:
       topo_net:
         ipv4_address: 192.168.100.41
@@ -288,6 +301,7 @@ services:
       - HOST_NAME=ship_tokyo
       - LAT=35.0
       - LNG=141.0
+      - WEATHER=rainy
     networks:
       topo_net:
         ipv4_address: 192.168.100.42
@@ -305,6 +319,7 @@ services:
       - HOST_NAME=ship_london
       - LAT=51.0
       - LNG=1.5
+      - WEATHER=stormy
     networks:
       topo_net:
         ipv4_address: 192.168.100.43

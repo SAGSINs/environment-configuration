@@ -2,8 +2,18 @@ import json
 import random
 from collections import defaultdict
 
-def gen_topology(hostnames, target_links=(20, 23)):
-    nodes = [{"id": h, "type": guess_type(h)} for h in hostnames]
+def gen_topology(nodes_info, target_links=(20, 23)):
+    nodes = [
+        {
+            "id": info["hostname"],
+            "type": info["type"],
+            "lat": info["lat"],
+            "lng": info["lng"],
+            "weather": info["weather"]
+        }
+        for info in nodes_info
+    ]
+    hostnames = [info["hostname"] for info in nodes_info]
     n = len(nodes)
 
     # Đảm bảo mỗi node có ít nhất 1 link
@@ -52,15 +62,25 @@ def guess_type(name):
 
 
 if __name__ == "__main__":
-    hostnames = [
-        "satellite_nairobi", "satellite_sao_paulo",
-        "drone_beijing", "drone_mumbai", "drone_london",
-        "ground_station_hanoi", "ground_station_paris", "ground_station_moscow",
-        "mobile_device_tokyo", "mobile_device_riyadh", "mobile_device_newyork", "mobile_device_singapore",
-        "ship_singapore", "ship_tokyo", "ship_london"
+    nodes_info = [
+        {"hostname": "satellite_nairobi", "type": "space", "lat": -1.2921, "lng": 36.8219, "weather": "clear"},
+        {"hostname": "satellite_sao_paulo", "type": "space", "lat": -23.5505, "lng": -46.6333, "weather": "rainy"},
+        {"hostname": "drone_beijing", "type": "air", "lat": 39.9042, "lng": 116.4074, "weather": "cloudy"},
+        {"hostname": "drone_mumbai", "type": "air", "lat": 19.0760, "lng": 72.8777, "weather": "rainy"},
+        {"hostname": "drone_london", "type": "air", "lat": 51.5074, "lng": -0.1278, "weather": "rainy"},
+        {"hostname": "ground_station_hanoi", "type": "ground", "lat": 21.0285, "lng": 105.8542, "weather": "cloudy"},
+        {"hostname": "ground_station_paris", "type": "ground", "lat": 48.8566, "lng": 2.3522, "weather": "cloudy"},
+        {"hostname": "ground_station_moscow", "type": "ground", "lat": 55.7558, "lng": 37.6173, "weather": "cloudy"},
+        {"hostname": "mobile_device_tokyo", "type": "mobile", "lat": 35.6764, "lng": 139.6500, "weather": "clear"},
+        {"hostname": "mobile_device_riyadh", "type": "mobile", "lat": 24.7136, "lng": 46.6753, "weather": "clear"},
+        {"hostname": "mobile_device_newyork", "type": "mobile", "lat": 40.7128, "lng": -74.0060, "weather": "cloudy"},
+        {"hostname": "mobile_device_singapore", "type": "mobile", "lat": 1.3521, "lng": 103.8198, "weather": "rainy"},
+        {"hostname": "ship_singapore", "type": "sea", "lat": 1.5321, "lng": 104.2, "weather": "stormy"},
+        {"hostname": "ship_tokyo", "type": "sea", "lat": 35.0, "lng": 141.0, "weather": "rainy"},
+        {"hostname": "ship_london", "type": "sea", "lat": 51.0, "lng": 1.5, "weather": "stormy"}
     ]
 
-    topo = gen_topology(hostnames, target_links=(20, 23))
+    topo = gen_topology(nodes_info, target_links=(20, 23))
     with open("topology.json", "w") as f:
         json.dump(topo, f, indent=2)
     print("✅ Generated topology.json with", len(topo["links"]), "links")

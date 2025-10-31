@@ -63,6 +63,7 @@ def guess_type(name):
 
 if __name__ == "__main__":
     nodes_info = [
+        # Original 15 nodes
         {"hostname": "satellite_nairobi", "type": "space", "lat": -1.2921, "lng": 36.8219, "weather": "clear"},
         {"hostname": "satellite_sao_paulo", "type": "space", "lat": -23.5505, "lng": -46.6333, "weather": "rainy"},
         {"hostname": "drone_beijing", "type": "air", "lat": 39.9042, "lng": 116.4074, "weather": "cloudy"},
@@ -77,10 +78,22 @@ if __name__ == "__main__":
         {"hostname": "mobile_device_singapore", "type": "mobile", "lat": 1.3521, "lng": 103.8198, "weather": "rainy"},
         {"hostname": "ship_singapore", "type": "sea", "lat": 1.5321, "lng": 104.2, "weather": "stormy"},
         {"hostname": "ship_tokyo", "type": "sea", "lat": 35.0, "lng": 141.0, "weather": "rainy"},
-        {"hostname": "ship_london", "type": "sea", "lat": 51.0, "lng": 1.5, "weather": "stormy"}
+        {"hostname": "ship_london", "type": "sea", "lat": 51.0, "lng": 1.5, "weather": "stormy"},
+        
+        # New 10 nodes - geographically distributed
+        {"hostname": "satellite_sydney", "type": "space", "lat": -33.8688, "lng": 151.2093, "weather": "clear"},      # Australia
+        {"hostname": "drone_capetown", "type": "air", "lat": -33.9249, "lng": 18.4241, "weather": "cloudy"},         # South Africa
+        {"hostname": "drone_toronto", "type": "air", "lat": 43.6532, "lng": -79.3832, "weather": "cloudy"},          # Canada
+        {"hostname": "ground_station_cairo", "type": "ground", "lat": 30.0444, "lng": 31.2357, "weather": "clear"},  # Egypt
+        {"hostname": "ground_station_jakarta", "type": "ground", "lat": -6.2088, "lng": 106.8456, "weather": "rainy"}, # Indonesia
+        {"hostname": "mobile_device_dubai", "type": "mobile", "lat": 25.2048, "lng": 55.2708, "weather": "clear"},   # UAE
+        {"hostname": "mobile_device_berlin", "type": "mobile", "lat": 52.5200, "lng": 13.4050, "weather": "cloudy"}, # Germany
+        {"hostname": "mobile_device_seoul", "type": "mobile", "lat": 37.5665, "lng": 126.9780, "weather": "cloudy"}, # South Korea
+        {"hostname": "ship_miami", "type": "sea", "lat": 25.7617, "lng": -80.1918, "weather": "rainy"},              # Atlantic Ocean
+        {"hostname": "ship_vancouver", "type": "sea", "lat": 49.2827, "lng": -123.1207, "weather": "cloudy"}         # Pacific Ocean
     ]
 
-    topo = gen_topology(nodes_info, target_links=(20, 23))
+    topo = gen_topology(nodes_info, target_links=(30, 35))
     with open("topology.json", "w") as f:
         json.dump(topo, f, indent=2)
     print("✅ Generated topology.json with", len(topo["links"]), "links")

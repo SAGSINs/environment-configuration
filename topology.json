@@ -104,6 +104,76 @@
       "lat": 51.0,
       "lng": 1.5,
       "weather": "stormy"
+    },
+    {
+      "id": "satellite_sydney",
+      "type": "space",
+      "lat": -33.8688,
+      "lng": 151.2093,
+      "weather": "clear"
+    },
+    {
+      "id": "drone_capetown",
+      "type": "air",
+      "lat": -33.9249,
+      "lng": 18.4241,
+      "weather": "cloudy"
+    },
+    {
+      "id": "drone_toronto",
+      "type": "air",
+      "lat": 43.6532,
+      "lng": -79.3832,
+      "weather": "cloudy"
+    },
+    {
+      "id": "ground_station_cairo",
+      "type": "ground",
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "weather": "clear"
+    },
+    {
+      "id": "ground_station_jakarta",
+      "type": "ground",
+      "lat": -6.2088,
+      "lng": 106.8456,
+      "weather": "rainy"
+    },
+    {
+      "id": "mobile_device_dubai",
+      "type": "mobile",
+      "lat": 25.2048,
+      "lng": 55.2708,
+      "weather": "clear"
+    },
+    {
+      "id": "mobile_device_berlin",
+      "type": "mobile",
+      "lat": 52.52,
+      "lng": 13.405,
+      "weather": "cloudy"
+    },
+    {
+      "id": "mobile_device_seoul",
+      "type": "mobile",
+      "lat": 37.5665,
+      "lng": 126.978,
+      "weather": "cloudy"
+    },
+    {
+      "id": "ship_miami",
+      "type": "sea",
+      "lat": 25.7617,
+      "lng": -80.1918,
+      "weather": "rainy"
+    },
+    {
+      "id": "ship_vancouver",
+      "type": "sea",
+      "lat": 49.2827,
+      "lng": -123.1207,
+      "weather": "cloudy"
     }
   ],
   "links": [
@@ -164,32 +234,80 @@
       "target": "ship_london"
     },
     {
-      "source": "satellite_nairobi",
-      "target": "ship_singapore"
+      "source": "ship_london",
+      "target": "satellite_sydney"
     },
     {
-      "source": "ship_london",
-      "target": "mobile_device_newyork"
+      "source": "satellite_sydney",
+      "target": "drone_capetown"
+    },
+    {
+      "source": "drone_capetown",
+      "target": "drone_toronto"
+    },
+    {
+      "source": "drone_toronto",
+      "target": "ground_station_cairo"
+    },
+    {
+      "source": "ground_station_cairo",
+      "target": "ground_station_jakarta"
+    },
+    {
+      "source": "ground_station_jakarta",
+      "target": "mobile_device_dubai"
+    },
+    {
+      "source": "mobile_device_dubai",
+      "target": "mobile_device_berlin"
+    },
+    {
+      "source": "mobile_device_berlin",
+      "target": "mobile_device_seoul"
+    },
+    {
+      "source": "mobile_device_seoul",
+      "target": "ship_miami"
+    },
+    {
+      "source": "ship_miami",
+      "target": "ship_vancouver"
+    },
+    {
+      "source": "satellite_nairobi",
+      "target": "ship_vancouver"
+    },
+    {
+      "source": "drone_mumbai",
+      "target": "drone_toronto"
+    },
+    {
+      "source": "satellite_nairobi",
+      "target": "mobile_device_riyadh"
+    },
+    {
+      "source": "ship_singapore",
+      "target": "drone_beijing"
+    },
+    {
+      "source": "satellite_sao_paulo",
+      "target": "ground_station_moscow"
     },
     {
       "source": "drone_london",
-      "target": "mobile_device_tokyo"
-    },
-    {
-      "source": "satellite_nairobi",
-      "target": "mobile_device_newyork"
+      "target": "ship_miami"
     },
     {
       "source": "ship_singapore",
-      "target": "ground_station_hanoi"
+      "target": "ground_station_moscow"
     },
     {
-      "source": "ship_singapore",
-      "target": "satellite_sao_paulo"
+      "source": "mobile_device_riyadh",
+      "target": "ship_london"
     },
     {
-      "source": "ship_tokyo",
-      "target": "drone_beijing"
+      "source": "mobile_device_seoul",
+      "target": "ground_station_paris"
     }
   ]
 }

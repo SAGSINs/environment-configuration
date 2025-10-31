@@ -13,3 +13,14 @@
 192.168.100.41 ship_singapore
 192.168.100.42 ship_tokyo
 192.168.100.43 ship_london
+192.168.100.13 satellite_sydney
+192.168.100.24 drone_capetown
+192.168.100.25 drone_toronto
+192.168.100.38 ground_station_cairo
+192.168.100.39 ground_station_jakarta
+192.168.100.44 mobile_device_dubai
+192.168.100.45 mobile_device_berlin
+192.168.100.46 mobile_device_seoul
+192.168.100.47 ship_miami
+192.168.100.48 ship_vancouver
+

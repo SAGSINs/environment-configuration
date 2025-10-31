@@ -330,6 +330,186 @@ services:
       sagsin-backend:
         condition: service_healthy
 
+  satellite_sydney:
+    image: baocules/sagsin-agent
+    container_name: satellite_sydney
+    environment:
+      - HOST_NAME=satellite_sydney
+      - LAT=-33.8688
+      - LNG=151.2093
+      - WEATHER=clear
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.13
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  drone_capetown:
+    image: baocules/sagsin-agent
+    container_name: drone_capetown
+    environment:
+      - HOST_NAME=drone_capetown
+      - LAT=-33.9249
+      - LNG=18.4241
+      - WEATHER=cloudy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.24
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  drone_toronto:
+    image: baocules/sagsin-agent
+    container_name: drone_toronto
+    environment:
+      - HOST_NAME=drone_toronto
+      - LAT=43.6532
+      - LNG=-79.3832
+      - WEATHER=cloudy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.25
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  ground_station_cairo:
+    image: baocules/sagsin-agent
+    container_name: ground_station_cairo
+    environment:
+      - HOST_NAME=ground_station_cairo
+      - LAT=30.0444
+      - LNG=31.2357
+      - WEATHER=clear
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.38
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  ground_station_jakarta:
+    image: baocules/sagsin-agent
+    container_name: ground_station_jakarta
+    environment:
+      - HOST_NAME=ground_station_jakarta
+      - LAT=-6.2088
+      - LNG=106.8456
+      - WEATHER=rainy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.39
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  mobile_device_dubai:
+    image: baocules/sagsin-agent
+    container_name: mobile_device_dubai
+    environment:
+      - HOST_NAME=mobile_device_dubai
+      - LAT=25.2048
+      - LNG=55.2708
+      - WEATHER=clear
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.44
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  mobile_device_berlin:
+    image: baocules/sagsin-agent
+    container_name: mobile_device_berlin
+    environment:
+      - HOST_NAME=mobile_device_berlin
+      - LAT=52.5200
+      - LNG=13.4050
+      - WEATHER=cloudy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.45
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  mobile_device_seoul:
+    image: baocules/sagsin-agent
+    container_name: mobile_device_seoul
+    environment:
+      - HOST_NAME=mobile_device_seoul
+      - LAT=37.5665
+      - LNG=126.9780
+      - WEATHER=cloudy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.46
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  ship_miami:
+    image: baocules/sagsin-agent
+    container_name: ship_miami
+    environment:
+      - HOST_NAME=ship_miami
+      - LAT=25.7617
+      - LNG=-80.1918
+      - WEATHER=rainy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.47
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
+  ship_vancouver:
+    image: baocules/sagsin-agent
+    container_name: ship_vancouver
+    environment:
+      - HOST_NAME=ship_vancouver
+      - LAT=49.2827
+      - LNG=-123.1207
+      - WEATHER=cloudy
+    networks:
+      topo_net:
+        ipv4_address: 192.168.100.48
+    volumes:
+      - ./custom_hosts:/etc/hosts
+      - ./topology.json:/topology/topology.json:ro
+    depends_on:
+      sagsin-backend:
+        condition: service_healthy
+
 networks:
   topo_net:
     ipam:
